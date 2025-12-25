@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,23 +7,88 @@
     <link rel="stylesheet" href="css/output.css" />
   </head>
   <body>
-    <header class="">
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+    <!-- navigasi bar atas -->
+    <header class="top-0 left-0 right-0 absolute z-50 w-full">
+      <nav class="py-7">
+        <ul class="gap-25 flex items-center justify-center">
+          <li>
+            <a
+              href="#"
+              class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+              >Menu</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+              >Locations & Contact</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
+
     <main>
       <!-- Hero -->
       <section class="relative">
+        <!-- background -->
         <img
-          src="res/images/background.webp"
+          src="res/images/background-figma.jpg"
           alt="Background"
-          class="w-full h-screena object-cover object-center"
+          class="top-0 left-0 absolute -z-10 h-screen w-full object-cover object-center"
         />
+
+        <!-- content -->
+        <div
+          class="py-35 gap-15 flex h-full w-full flex-col items-center justify-center"
+        >
+          <!-- logo -->
+          <div class="gap-15 flex items-center justify-center">
+            <img src="res/images/beuu-logo.png" alt="beuu kopi" class="" />
+            <span class="text-6xl font-semibold">X</span>
+            <img
+              src="res/images/bunbun-logo.png"
+              alt="bunbun cemilan sehat"
+              class=""
+            />
+          </div>
+
+          <!-- title -->
+          <div class="gap-5 flex flex-col items-center">
+            <h1
+              class="text-6xl font-bold text-shadow-lg leading-tight text-center"
+            >
+              <span class="text-bgprimary">Hangat</span> Seperti di Rumah,<br />
+              <span class="text-bgprimary">Nikmat</span> Seperti Kenangan.
+            </h1>
+            <p class="text text-center">
+              Minuman & Makanan ala rumahan yang serasa masakan ibu
+            </p>
+            <button
+              class="mt-15 bg-bgprimary hover:bg-bgprimary/70 rounded-lg w-fit transition-all duration-200"
+            >
+              <a href="#" class="gap-5 p-3 text-shadow-lg flex">
+                <span> Lihat Menu Kami </span>
+                <img src="res/icon/Arrow 1.svg" alt="panah ke kanan" />
+              </a>
+            </button>
+          </div>
+        </div>
       </section>
     </main>
   </body>
