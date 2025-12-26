@@ -14,3 +14,23 @@
     color: aliceblue;
   }
 }
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+/* #map {
+  width: 50%;
+  height: 200px;
+} */

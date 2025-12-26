@@ -5,143 +5,646 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beuu kopi x Bunbun</title>
     <link rel="stylesheet" href="css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
   </head>
   <body class="bg-bgsecondary">
-    <!-- navigasi bar atas -->
-    <header class="top-0 left-0 right-0 absolute z-50 w-full">
-      <nav class="py-7">
-        <ul class="gap-25 flex items-center justify-center">
-          <li>
-            <a
-              href="#"
-              class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
-              >Menu</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
-              >Locations & Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <!-- navigasi bar atas -->
+        <header class="top-0 left-0 right-0 absolute z-50 w-full">
+          <nav class="py-7">
+            <ul class="gap-25 flex items-center justify-center">
+              <li>
+                <a
+                  href="#"
+                  class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+                  >Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+                  >Locations & Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </header>
 
-    <main>
-      <!-- Hero -->
-      <section class="relative z-10">
-        <!-- background -->
-        <img
-          src="res/images/background-figma.jpg"
-          alt="Background"
-          class="top-0 left-0 absolute -z-5 h-screen w-full object-cover object-center"
-        />
-
-        <!-- content -->
-        <div
-          class="py-35 gap-15 flex h-full w-full flex-col items-center justify-center"
-        >
-          <!-- logo -->
-          <div class="gap-15 flex items-center justify-center">
-            <img src="res/images/beuu-logo.png" alt="beuu kopi" class="" />
-            <span class="text-6xl font-semibold">X</span>
+        <main>
+          <!-- Hero -->
+          <section class="relative z-10">
+            <!-- background -->
             <img
-              src="res/images/bunbun-logo.png"
-              alt="bunbun cemilan sehat"
-              class=""
+              src="res/images/background-figma.jpg"
+              alt="Background"
+              class="top-0 left-0 absolute -z-5 h-screen w-full object-cover object-center"
+            />
+
+            <!-- content -->
+            <div
+              class="py-35 gap-15 flex h-full w-full flex-col items-center justify-center"
+            >
+              <!-- logo -->
+              <div class="gap-15 flex items-center justify-center">
+                <img src="res/images/beuu-logo.png" alt="beuu kopi" class="" />
+                <span class="text-6xl font-semibold">X</span>
+                <img
+                  src="res/images/bunbun-logo.png"
+                  alt="bunbun cemilan sehat"
+                  class=""
+                />
+              </div>
+
+              <!-- title -->
+              <div class="gap-5 flex flex-col items-center">
+                <h1
+                  class="text-6xl font-bold text-shadow-lg leading-tight text-center"
+                >
+                  <span class="text-bgprimary">Hangat</span> Seperti di
+                  Rumah,<br />
+                  <span class="text-bgprimary">Nikmat</span> Seperti Kenangan.
+                </h1>
+                <p class="text text-center">
+                  Minuman & Makanan ala rumahan yang serasa masakan ibu
+                </p>
+                <button
+                  class="mt-15 bg-bgprimary hover:bg-bgprimary/70 rounded-lg w-fit transition-all duration-200"
+                >
+                  <a href="#" class="gap-5 p-3 text-shadow-lg flex">
+                    <span> Lihat Menu Kami </span>
+                    <img src="res/icon/Arrow 1.svg" alt="panah ke kanan" />
+                  </a>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- about -->
+          <section
+            class="py-50 relative flex justify-center overflow-hidden text-[#42291A]"
+          >
+            <!-- background makanan -->
+            <img
+              src="res/images/about-kiri.svg"
+              alt="makanan"
+              class="size-180 -left-30 -top-50 absolute"
+            />
+            <img
+              src="res/images/about-kanan.svg"
+              alt="kopi"
+              class="size-180 -bottom-50 -right-30 absolute"
+            />
+
+            <!-- content -->
+            <div class="flex w-3/5 flex-col items-start">
+              <h1 class="text-6xl font-bold self-center">About Us</h1>
+              <p class="font-semibold mt-20 text-justify">
+                Beeu Kopi X Bunbun Cemilan Sehat merupakan kedai kopi & makanan
+                lokal yang menyajikan berbagai macam menu kopi & makanan khas
+                Nusantara.
+              </p>
+              <p class="font-semibold mt-5 text-justify">
+                Lahir pada tahun 2018 dimana saat itu kami mengawali usaha dari
+                dapur rumah. Menawarkan menu makanan & minuman melalui sosial
+                media & marketplace.
+              </p>
+              <p class="font-semibold mt-5 text-justify">
+                Hingga pada tahun 2019 kami memberanikan diri melangkah 1 tahap
+                ke babak baru dengan membuka kedai pertama di Sawangan, Depok.
+              </p>
+              <p class="font-semibold mt-10 text-justify">
+                Kami menawarkan beragam macam minuman & makanan dengan mengusung
+                konsep kedai lokal ala rumahan dengan tagline "Serasa masakan
+                ibu". Semoga kehadiran kami bisa menjadi alternatif di era
+                gempuran brand kuliner asing yang masuk ke Pasar Indonesia. Kami
+                berharap pelanggan yang hadir dapat merasakan kilas balik
+                kembali ke suasana sederhana seperti di kampung halaman dulu.
+              </p>
+              <p class="font-semibold mt-5 text-justify">
+                Semoga kami bisa terus tumbuh menjadi kedai yang setara dengan
+                kedai modern lainnya.
+              </p>
+              <p class="font-semibold mt-5">
+                Salam hangat,<br />
+                Beeu Kopi & Bunbun Cemilan Sehat
+              </p>
+            </div>
+          </section>
+
+          <!-- comunity -->
+          <section
+            id="community-section"
+            class="mb-50 py-16 flex h-screen flex-col"
+          >
+            <h1 class="text-5xl text-black font-bold mb-12 text-center">
+              Our Community
+            </h1>
+
+            <div class="flex-1">
+              <div class="scroll-container h-full overflow-x-hidden">
+                <div
+                  id="community-content"
+                  class="px-50 pb-4 gap-10 h-160 flex"
+                >
+                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/Vibes-10.webp"
+                        alt="Community 1"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-11.webp"
+                        alt="Community 5"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/Vibes-12.webp"
+                        alt="Community 2"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-13.webp"
+                        alt="Community 6"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/Vibes-14.webp"
+                        alt="Community 3"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/Vibes-15.webp"
+                        alt="Community 4"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/Vibes-16.webp"
+                        alt="Community 1"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-17.webp"
+                        alt="Community 5"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-18.webp"
+                        alt="Community 2"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-19.webp"
+                        alt="Community 6"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-20.webp"
+                        alt="Community 3"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-21.webp"
+                        alt="Community 4"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-3.webp"
+                        alt="Community 3"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-4.webp"
+                        alt="Community 4"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-5.webp"
+                        alt="Community 3"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-6.webp"
+                        alt="Community 4"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-7.webp"
+                        alt="Community 3"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                    <div
+                      class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
+                    >
+                      <img
+                        src="res/comunity-img/vibes-8.webp"
+                        alt="Community 4"
+                        class="h-auto w-full object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- testimonial -->
+          <section
+            class="pt-30 pb-70 from-bgtertiary to-bgsecondary bg-linear-0 from-90%"
+          >
+            <h1 class="text-5xl text-black font-bold mb-20 text-center">
+              Testimonial
+            </h1>
+            <!-- content -->
+            <div class="gap-10 flex flex-wrap justify-center">
+              <!-- testimoni card -->
+              <div
+                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+              >
+                <span
+                  class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
+                  >"</span
+                >
+                <span
+                  class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
+                  >"</span
+                >
+                <div class="gap-5 max-w-80 flex flex-col">
+                  <p class="text-xs text-shadow-2xs line-clamp-6">
+                    Dimsum nya enak bangeeeetttttt, dimsum mentai nya juwara,
+                    tempat nya cozy, bersih daaannn minuman favorit saya disitu
+                    Latte Rum Raisin. Sumpah ENDOLITA
+                  </p>
+                  <div>⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="gap-3 flex flex-col items-center">
+                  <img
+                    src="res/images/background-figma.jpg"
+                    alt="Testimoni"
+                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                  />
+                  <span
+                    class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
+                    >anetta dwikanya</span
+                  >
+                </div>
+              </div>
+              <div
+                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+              >
+                <span
+                  class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
+                  >"</span
+                >
+                <span
+                  class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
+                  >"</span
+                >
+                <div class="gap-5 max-w-80 flex flex-col">
+                  <p class="text-xs text-shadow-2xs line-clamp-6">
+                    Tempatnya enak bgtt, bersih dan adem. Untuk dimsum aku
+                    paling suka yg mentai rasanya enak bgtt pokonya beda dari yg
+                    lain, dagingnya berasa bgt, the best deh, belom pernah makan
+                    dimsum seenak ini, untuk kopi aku paling suka yg matcha late
+                    ❤️
+                  </p>
+                  <div>⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="gap-3 flex flex-col items-center">
+                  <img
+                    src="res/images/background-figma.jpg"
+                    alt="Testimoni"
+                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                  />
+                  <span
+                    class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
+                    >Nafila Damayanti</span
+                  >
+                </div>
+              </div>
+              <div
+                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+              >
+                <span
+                  class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
+                  >"</span
+                >
+                <span
+                  class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
+                  >"</span
+                >
+                <div class="gap-5 max-w-80 flex flex-col">
+                  <p class="text-xs text-shadow-2xs line-clamp-6">
+                    Tempat yang sangat humble seperti dirumah sendiri, kopinya
+                    enakk pelayanan nya top, owner nya baik, harganya
+                    terjangkau, bakal jadi loyal customer disini. Cuma tempatnya
+                    agak kedalem jdi ga keliatan.
+                  </p>
+                  <div>⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="gap-3 flex flex-col items-center">
+                  <img
+                    src="res/images/background-figma.jpg"
+                    alt="Testimoni"
+                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                  />
+                  <span
+                    class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
+                    >achmad ramadhan</span
+                  >
+                </div>
+              </div>
+              <div
+                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+              >
+                <span
+                  class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
+                  >"</span
+                >
+                <span
+                  class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
+                  >"</span
+                >
+                <div class="gap-5 max-w-80 flex flex-col">
+                  <p class="text-xs text-shadow-2xs line-clamp-6">
+                    Kemana aja dirikuu, baru nyoba kopi arabicanya enak,, next
+                    insyaa Allah mau coba makanannya sm minuman yg lain.
+                  </p>
+                  <div>⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="gap-3 flex flex-col items-center">
+                  <img
+                    src="res/images/background-figma.jpg"
+                    alt="Testimoni"
+                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                  />
+                  <span
+                    class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
+                    >LULU SA'IDAH * HAYNAF STORY</span
+                  >
+                </div>
+              </div>
+              <div
+                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+              >
+                <span
+                  class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
+                  >"</span
+                >
+                <span
+                  class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
+                  >"</span
+                >
+                <div class="gap-5 max-w-80 flex flex-col">
+                  <p class="text-xs text-shadow-2xs line-clamp-6">
+                    Nybain cofee es cream, afogato. Enak .. Tempat enak nyaman
+                    bersih..
+                  </p>
+                  <div>⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="gap-3 flex flex-col items-center">
+                  <img
+                    src="res/images/background-figma.jpg"
+                    alt="Testimoni"
+                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                  />
+                  <span
+                    class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
+                    >WAHYU PROPERTY CHANEL</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer
+          class="from-bgsecondary to-bgtertiary bg-radial-[at_50%_75%] from-80% to-90%"
+        >
+          <!-- icon -->
+          <div
+            class="to-bgtertiary h-70 px-10 relative flex w-full justify-between bg-linear-0 from-transparent to-80%"
+          >
+            <img
+              src="res/icon/facebook.svg"
+              alt="facebook"
+              class="w-13 h-13 top-30 relative"
+            />
+            <img
+              src="res/icon/instagram.svg"
+              alt="instagram"
+              class="w-13 h-13 top-10 relative"
+            />
+            <img src="res/icon/whatsapp.svg" alt="whatsapp" class="w-13 h-13" />
+            <img
+              src="res/icon/thread.svg"
+              alt="thread"
+              class="w-13 h-13 top-10 relative"
+            />
+            <img
+              src="res/icon/youtube.svg"
+              alt="youtube"
+              class="w-13 h-13 top-30 relative"
             />
           </div>
 
-          <!-- title -->
-          <div class="gap-5 flex flex-col items-center">
-            <h1
-              class="text-6xl font-bold text-shadow-lg leading-tight text-center"
-            >
-              <span class="text-bgprimary">Hangat</span> Seperti di Rumah,<br />
-              <span class="text-bgprimary">Nikmat</span> Seperti Kenangan.
-            </h1>
-            <p class="text text-center">
-              Minuman & Makanan ala rumahan yang serasa masakan ibu
-            </p>
-            <button
-              class="mt-15 bg-bgprimary hover:bg-bgprimary/70 rounded-lg w-fit transition-all duration-200"
-            >
-              <a href="#" class="gap-5 p-3 text-shadow-lg flex">
-                <span> Lihat Menu Kami </span>
-                <img src="res/icon/Arrow 1.svg" alt="panah ke kanan" />
-              </a>
-            </button>
+          <!-- content -->
+          <div class="px-30 pb-20">
+            <div class="gap-5 flex items-center justify-center">
+              <!-- location -->
+              <div id="map" class="h-120 rounded-xl shadow-2xl w-1/2"></div>
+
+              <!-- detail -->
+              <div class="text-black max-w-1/2">
+                <div class="gap-2 flex items-start">
+                  <img
+                    src="res/icon/location_on.svg"
+                    alt="location on"
+                    class="w-8 h-8"
+                  />
+                  <div>
+                    <h3 class="text-2xl">LOKASI</h3>
+                    <p class="text-sm mt-3">
+                      Vila Rizki Ilhami 2 Blok RA no. 18A, Pengasinan, Sawangan,
+                      Depok City, West Java 16518
+                    </p>
+                  </div>
+                </div>
+
+                <div class="gap-2 mt-10 flex items-start">
+                  <img src="res/icon/Clock.svg" alt="clock" class="w-8 h-8" />
+                  <div>
+                    <h3 class="text-2xl">WAKTU OPERASIONAL</h3>
+                    <p class="text-sm mt-3">
+                      Senin - Jum’at : 08.30 - 22.00 WIB <br />
+                      Sabtu & Minggu : 07.00 - 22.00 WIB
+                    </p>
+                  </div>
+                </div>
+
+                <div class="gap-2 mt-10 flex items-start">
+                  <img
+                    src="res/icon/Phone call.svg"
+                    alt="phone call"
+                    class="w-8 h-8"
+                  />
+                  <div>
+                    <h3 class="text-2xl">KONTAK</h3>
+                    <p class="text-sm mt-3">0812-8529-5547</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- button -->
+            <div class="mt-15 flex justify-around">
+              <button
+                class="px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#4EB7FB]"
+              >
+                <img src="res/icon/Map.svg" alt="map" />
+                <span>Buka di Maps</span>
+                <img src="res/icon/Arrow 1.svg" alt="arrow" class="w-6 h-6" />
+              </button>
+              <button
+                class="px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#00AA13]"
+              >
+                <img src="res/icon/gofood-logo 1.svg" alt="go food" />
+                <span>Pesan Lewat GoFood</span>
+                <img src="res/icon/Arrow 1.svg" alt="arrow" class="w-6 h-6" />
+              </button>
+              <button
+                class="px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#4CAF50]"
+              >
+                <img src="res/icon/whatsapp 1.svg" alt="whatsapp" />
+                <span>Kontak Whatsapp Kami</span>
+                <img src="res/icon/Arrow 1.svg" alt="arrow" class="w-6 h-6" />
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        </footer>
+      </div>
+    </div>
 
-      <!-- about -->
-      <section
-        class="py-50 relative flex justify-center overflow-hidden text-[#42291A]"
-      >
-        <!-- background makanan -->
-        <img
-          src="res/images/about-kiri.svg"
-          alt="makanan"
-          class="size-180 -left-30 -top-50 absolute"
-        />
-        <img
-          src="res/images/about-kanan.svg"
-          alt="kopi"
-          class="size-180 -bottom-50 -right-30 absolute"
-        />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
 
-        <!-- content -->
-        <div class="flex w-3/5 flex-col items-start">
-          <h1 class="text-6xl font-bold self-center">About Us</h1>
-          <p class="font-semibold mt-20 text-justify">
-            Beeu Kopi X Bunbun Cemilan Sehat merupakan kedai kopi & makanan
-            lokal yang menyajikan berbagai macam menu kopi & makanan khas
-            Nusantara.
-          </p>
-          <p class="font-semibold mt-5 text-justify">
-            Lahir pada tahun 2018 dimana saat itu kami mengawali usaha dari
-            dapur rumah. Menawarkan menu makanan & minuman melalui sosial media
-            & marketplace.
-          </p>
-          <p class="font-semibold mt-5 text-justify">
-            Hingga pada tahun 2019 kami memberanikan diri melangkah 1 tahap ke
-            babak baru dengan membuka kedai pertama di Sawangan, Depok.
-          </p>
-          <p class="font-semibold mt-10 text-justify">
-            Kami menawarkan beragam macam minuman & makanan dengan mengusung
-            konsep kedai lokal ala rumahan dengan tagline "Serasa masakan ibu".
-            Semoga kehadiran kami bisa menjadi alternatif di era gempuran brand
-            kuliner asing yang masuk ke Pasar Indonesia. Kami berharap pelanggan
-            yang hadir dapat merasakan kilas balik kembali ke suasana sederhana
-            seperti di kampung halaman dulu.
-          </p>
-          <p class="font-semibold mt-5 text-justify">
-            Semoga kami bisa terus tumbuh menjadi kedai yang setara dengan kedai
-            modern lainnya.
-          </p>
-          <p class="font-semibold mt-5">
-            Salam hangat,<br />
-            Beeu Kopi & Bunbun Cemilan Sehat
-          </p>
-        </div>
-      </section>
-    </main>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
