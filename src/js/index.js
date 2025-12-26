@@ -1,6 +1,6 @@
 const lokasiToko = [-6.4082755331461465, 106.74963790859596];
 
-const map = L.map("map").setView(lokasiToko, 17); // Angka 15 adalah level zoom
+const map = L.map("map").setView(lokasiToko, 17);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,

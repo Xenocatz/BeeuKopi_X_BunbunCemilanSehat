@@ -2,7 +2,10 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-xs: 420px;
+
   --font-sans: "Poppins", sans-serif;
+
   --color-bgprimary: #fb924e;
   --color-bgsecondary: #ffd3a8;
   --color-bgtertiary: #c3b091;
@@ -29,8 +32,3 @@
 .scroll-container::-webkit-scrollbar-thumb:hover {
   background: transparent;
 }
-
-/* #map {
-  width: 50%;
-  height: 200px;
-} */
