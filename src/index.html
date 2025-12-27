@@ -64,12 +64,14 @@
       <div id="smooth-content">
         <main>
           <!-- Hero -->
-          <section class="relative z-10">
+          <section class="relative z-0">
             <!-- background -->
             <img
+              data-speed="0.5"
+              id="background-hero"
               src="res/images/background-figma.jpg"
               alt="Background"
-              class="top-0 left-0 absolute -z-5 h-screen w-full object-cover object-center"
+              class="top-0 left-0 shadow-2xl shadow-bgsecondary absolute -z-5 h-screen w-full object-cover object-center"
             />
 
             <!-- content -->
@@ -78,13 +80,15 @@
             >
               <!-- logo -->
               <div class="gap-6 md:gap-15 flex items-center justify-center">
-                <img 
-                  src="res/images/beuu-logo.png" 
-                  alt="beuu kopi" 
-                  class="w-20 md:w-36" 
+                <img
+                  id="logo-beuu"
+                  src="res/images/beuu-logo.png"
+                  alt="beuu kopi"
+                  class="w-20 md:w-36"
                 />
                 <span class="text-2xl md:text-6xl font-semibold">X</span>
                 <img
+                  id="logo-bunbun"
                   src="res/images/bunbun-logo.png"
                   alt="bunbun cemilan sehat"
                   class="w-20 md:w-36"
@@ -94,21 +98,23 @@
               <!-- title -->
               <div class="gap-5 flex flex-col items-center">
                 <h1
+                  id="hero-title"
                   class="text-2xl md:text-5xl lg:text-6xl font-bold text-shadow-lg leading-tight text-center"
                 >
                   <span class="text-bgprimary">Hangat</span> Seperti di
                   Rumah,<br />
                   <span class="text-bgprimary">Nikmat</span> Seperti Kenangan.
                 </h1>
-                <p class="text-sm md:text-base text-center">
+                <p id="hero-subtitle" class="text-sm md:text-base text-center">
                   Minuman & Makanan ala rumahan yang serasa masakan ibu
                 </p>
                 <button
-                  class="scale-80 md:scale-100 mt-15 bg-bgprimary hover:bg-bgprimary/70 rounded-lg w-fit transition-all duration-200"
+                  id="hero-button"
+                  class="md:scale-100 mt-15 w-fit scale-80"
                 >
                   <a
                     href="#menu-section"
-                    class="scroll-to gap-5 p-3 text-shadow-lg flex items-center"
+                    class="scroll-to gap-5 p-3 rounded-lg bg-bgprimary hover:bg-bgprimary/70 text-shadow-lg flex items-center transition-all duration-200"
                   >
                     <span> Lihat Menu Kami </span>
                     <img
@@ -125,7 +131,7 @@
           <!-- about -->
           <section
             id="about-section"
-            class="py-64 pb-16 lg:py-50 relative z-0 flex justify-center overflow-hidden text-[#42291A]"
+            class="py-64 pb-16 lg:py-50 bg-bgsecondary relative z-0 flex justify-center overflow-hidden text-[#42291A]"
           >
             <!-- background makanan -->
             <img
@@ -140,9 +146,13 @@
             />
 
             <!-- content -->
-            <div class="flex w-10/12 xl:w-3/5 flex-col items-start">
-              <h1 class="text-3xl md:text-6xl font-bold self-center">About Us</h1>
-              <p class="text-xs md:text-base font-semibold mt-10 md:mt-20 text-justify">
+            <div class="xl:w-3/5 flex w-10/12 flex-col items-start">
+              <h1 class="text-3xl md:text-6xl font-bold self-center">
+                About Us
+              </h1>
+              <p
+                class="text-xs md:text-base font-semibold mt-10 md:mt-20 text-justify"
+              >
                 Beeu Kopi X Bunbun Cemilan Sehat merupakan kedai kopi & makanan
                 lokal yang menyajikan berbagai macam menu kopi & makanan khas
                 Nusantara.
@@ -728,7 +738,7 @@
               <img
                 src="res/icon/facebook.svg"
                 alt="facebook"
-                class="w-8 md:w-13  lg:w-16 aspect-square top-12 md:top-30 relative"
+                class="w-8 md:w-13 lg:w-16 top-12 md:top-30 relative aspect-square"
               />
             </a>
 
@@ -739,7 +749,7 @@
               <img
                 src="res/icon/instagram.svg"
                 alt="instagram"
-                class="w-8 md:w-13 lg:w-16 aspect-square md:top-10 relative"
+                class="w-8 md:w-13 lg:w-16 md:top-10 relative aspect-square"
               />
             </a>
 
@@ -747,7 +757,7 @@
               <img
                 src="res/icon/whatsapp.svg"
                 alt="whatsapp"
-                class="w-8 md:w-13 lg:w-16 aspect-square relative top-12 md:top-0" 
+                class="w-8 md:w-13 lg:w-16 top-12 md:top-0 relative aspect-square"
               />
             </a>
 
@@ -758,7 +768,7 @@
               <img
                 src="res/icon/thread.svg"
                 alt="thread"
-                class="w-8 md:w-13 lg:w-16 aspect-square md:top-10 relative"
+                class="w-8 md:w-13 lg:w-16 md:top-10 relative aspect-square"
               />
             </a>
 
@@ -769,19 +779,24 @@
               <img
                 src="res/icon/youtube.svg"
                 alt="youtube"
-                class="w-8 md:w-13 lg:w-16 aspect-square top-12 md:top-30 relative"
+                class="w-8 md:w-13 lg:w-16 top-12 md:top-30 relative aspect-square"
               />
             </a>
           </div>
 
           <!-- content -->
           <div class="px-8 md:px-30 pb-20">
-            <div class="gap-5 flex flex-col lg:flex-row items-center justify-center">
+            <div
+              class="gap-5 lg:flex-row flex flex-col items-center justify-center"
+            >
               <!-- location -->
-              <div id="map" class="aspect-square md:aspect-auto md:h-120 rounded-xl shadow-2xl w-full lg:w-1/2"></div>
+              <div
+                id="map"
+                class="md:aspect-auto md:h-120 rounded-xl shadow-2xl lg:w-1/2 aspect-square w-full"
+              ></div>
 
               <!-- detail -->
-              <div class="text-black w-full lg:max-w-1/2">
+              <div class="text-black lg:max-w-1/2 w-full">
                 <div class="gap-2 flex items-start">
                   <img
                     src="res/icon/location_on.svg"
@@ -798,7 +813,11 @@
                 </div>
 
                 <div class="gap-2 mt-10 flex items-start">
-                  <img src="res/icon/Clock.svg" alt="clock" class="w-4 translate-y-1 md:translate-y-0 md:w-8 aspect-square" />
+                  <img
+                    src="res/icon/Clock.svg"
+                    alt="clock"
+                    class="w-4 translate-y-1 md:translate-y-0 md:w-8 aspect-square"
+                  />
                   <div>
                     <h3 class="text-base md:text-2xl">WAKTU OPERASIONAL</h3>
                     <p class="text-xs md:text-sm mt-3">
@@ -822,11 +841,13 @@
               </div>
             </div>
             <!-- button -->
-            <div class="mt-15 flex flex-col flex-wrap md:flex-row justify-start gap-4 lg:justify-around">
+            <div
+              class="mt-15 md:flex-row gap-4 lg:justify-around flex flex-col flex-wrap justify-start"
+            >
               <a
                 href="https://maps.app.goo.gl/mnM3UTKTnBkXkTDg6"
                 target="_blank"
-                class="w-fit px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#4EB7FB]"
+                class="px-4 py-2 gap-2 rounded-lg flex w-fit cursor-pointer items-center bg-[#4EB7FB]"
               >
                 <img src="res/icon/Map.svg" alt="map" />
                 <span>Buka di Maps</span>
@@ -835,7 +856,7 @@
               <a
                 href="https://gofood.co.id/jakarta/restaurant/bunbun-cemilan-sehat-sawangan-7ed89c3a-373e-4450-8468-7636a441331c"
                 target="_blank"
-                class="w-fit px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#00AA13]"
+                class="px-4 py-2 gap-2 rounded-lg flex w-fit cursor-pointer items-center bg-[#00AA13]"
               >
                 <img src="res/icon/gofood-logo 1.svg" alt="go food" />
                 <span>Pesan Lewat GoFood</span>
@@ -844,7 +865,7 @@
               <a
                 href="https://wa.me/6281285295547"
                 target="_blank"
-                class="w-fit px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#4CAF50]"
+                class="px-4 py-2 gap-2 rounded-lg flex w-fit cursor-pointer items-center bg-[#4CAF50]"
               >
                 <img src="res/icon/whatsapp 1.svg" alt="whatsapp" />
                 <span>Kontak Whatsapp Kami</span>

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("load", (event) => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
   // smooth scroll
@@ -51,5 +51,77 @@ document.addEventListener("DOMContentLoaded", (event) => {
       invalidateOnRefresh: true,
       anticipatePin: 1,
     },
+  });
+
+  //========================  hero section
+  // nav bar
+  gsap.from("#nav-bar li", {
+    y: -100,
+    opacity: 0,
+    duration: 0.8,
+    ease: "back.out(1.7)",
+    stagger: 0.1,
+    delay: 0.5,
+  });
+
+  // background
+  // gsap.from("#background-hero", {
+  //   scale: 1.5,
+  //   duration: 1.2,
+  //   ease: "power4.inOut()",
+  // });
+
+  // logo
+  const tl = gsap.timeline();
+  tl.from(
+    "#logo-beuu",
+    {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      ease: "back.out(1.7)",
+    },
+    "+=1.3",
+  ).from(
+    "#logo-bunbun",
+    {
+      y: -50,
+      opacity: 0,
+      duration: 0.8,
+      ease: "back.out(1.7)",
+    },
+    "<",
+  );
+
+  // title
+  const split = SplitText.create("#hero-title", {
+    type: "words",
+  });
+  gsap.from(split.words, {
+    y: 100,
+    opacity: 0,
+    rotation: "random(-30, 30)",
+    duration: 1,
+    ease: "back",
+    stagger: 0.15,
+    delay: 1.5,
+  });
+
+  // subtitle
+  gsap.from("#hero-subtitle", {
+    y: 20,
+    opacity: 0,
+    duration: 0.8,
+    ease: "back.out(1.7)",
+    delay: 2.8,
+  });
+
+  // button
+  gsap.from("#hero-button", {
+    y: 20,
+    opacity: 0,
+    duration: 0.8,
+    ease: "back.out(1.7)",
+    delay: 2.9,
   });
 });
