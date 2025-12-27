@@ -719,7 +719,7 @@
         >
           <!-- icon -->
           <div
-            class="to-bgtertiary h-70 px-10 relative flex w-full justify-between bg-linear-0 from-transparent to-80%"
+            class="to-bgtertiary h-32 md:h-56 lg:h-70 px-10 relative flex w-full justify-between bg-linear-0 from-transparent to-80%"
           >
             <a
               href="https://www.facebook.com/bunbuncemilansehat/"
@@ -728,7 +728,7 @@
               <img
                 src="res/icon/facebook.svg"
                 alt="facebook"
-                class="w-13 h-13 top-30 relative"
+                class="w-8 md:w-13  lg:w-16 aspect-square top-12 md:top-30 relative"
               />
             </a>
 
@@ -739,7 +739,7 @@
               <img
                 src="res/icon/instagram.svg"
                 alt="instagram"
-                class="w-13 h-13 top-10 relative"
+                class="w-8 md:w-13 lg:w-16 aspect-square md:top-10 relative"
               />
             </a>
 
@@ -747,7 +747,7 @@
               <img
                 src="res/icon/whatsapp.svg"
                 alt="whatsapp"
-                class="w-13 h-13"
+                class="w-8 md:w-13 lg:w-16 aspect-square relative top-12 md:top-0" 
               />
             </a>
 
@@ -758,7 +758,7 @@
               <img
                 src="res/icon/thread.svg"
                 alt="thread"
-                class="w-13 h-13 top-10 relative"
+                class="w-8 md:w-13 lg:w-16 aspect-square md:top-10 relative"
               />
             </a>
 
@@ -769,28 +769,28 @@
               <img
                 src="res/icon/youtube.svg"
                 alt="youtube"
-                class="w-13 h-13 top-30 relative"
+                class="w-8 md:w-13 lg:w-16 aspect-square top-12 md:top-30 relative"
               />
             </a>
           </div>
 
           <!-- content -->
-          <div class="px-30 pb-20">
-            <div class="gap-5 flex items-center justify-center">
+          <div class="px-8 md:px-30 pb-20">
+            <div class="gap-5 flex flex-col lg:flex-row items-center justify-center">
               <!-- location -->
-              <div id="map" class="h-120 rounded-xl shadow-2xl w-1/2"></div>
+              <div id="map" class="aspect-square md:aspect-auto md:h-120 rounded-xl shadow-2xl w-full lg:w-1/2"></div>
 
               <!-- detail -->
-              <div class="text-black max-w-1/2">
+              <div class="text-black w-full lg:max-w-1/2">
                 <div class="gap-2 flex items-start">
                   <img
                     src="res/icon/location_on.svg"
                     alt="location on"
-                    class="w-8 h-8"
+                    class="w-4 translate-y-1 md:translate-y-0 md:w-8 aspect-square"
                   />
                   <div>
-                    <h3 class="text-2xl">LOKASI</h3>
-                    <p class="text-sm mt-3">
+                    <h3 class="text-base md:text-2xl">LOKASI</h3>
+                    <p class="text-xs md:text-sm mt-3">
                       Vila Rizki Ilhami 2 Blok RA no. 18A, Pengasinan, Sawangan,
                       Depok City, West Java 16518
                     </p>
@@ -798,10 +798,10 @@
                 </div>
 
                 <div class="gap-2 mt-10 flex items-start">
-                  <img src="res/icon/Clock.svg" alt="clock" class="w-8 h-8" />
+                  <img src="res/icon/Clock.svg" alt="clock" class="w-4 translate-y-1 md:translate-y-0 md:w-8 aspect-square" />
                   <div>
-                    <h3 class="text-2xl">WAKTU OPERASIONAL</h3>
-                    <p class="text-sm mt-3">
+                    <h3 class="text-base md:text-2xl">WAKTU OPERASIONAL</h3>
+                    <p class="text-xs md:text-sm mt-3">
                       Senin - Jum’at : 08.30 - 22.00 WIB <br />
                       Sabtu & Minggu : 07.00 - 22.00 WIB
                     </p>
@@ -812,21 +812,21 @@
                   <img
                     src="res/icon/Phone call.svg"
                     alt="phone call"
-                    class="w-8 h-8"
+                    class="w-4 translate-y-1 md:translate-y-0 md:w-8 aspect-square"
                   />
                   <div>
-                    <h3 class="text-2xl">KONTAK</h3>
-                    <p class="text-sm mt-3">0812-8529-5547</p>
+                    <h3 class="text-base md:text-2xl">KONTAK</h3>
+                    <p class="text-xs md:text-sm mt-3">0812-8529-5547</p>
                   </div>
                 </div>
               </div>
             </div>
             <!-- button -->
-            <div class="mt-15 flex justify-around">
+            <div class="mt-15 flex flex-col flex-wrap md:flex-row justify-start gap-4 lg:justify-around">
               <a
                 href="https://maps.app.goo.gl/mnM3UTKTnBkXkTDg6"
                 target="_blank"
-                class="px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#4EB7FB]"
+                class="w-fit px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#4EB7FB]"
               >
                 <img src="res/icon/Map.svg" alt="map" />
                 <span>Buka di Maps</span>
@@ -835,7 +835,7 @@
               <a
                 href="https://gofood.co.id/jakarta/restaurant/bunbun-cemilan-sehat-sawangan-7ed89c3a-373e-4450-8468-7636a441331c"
                 target="_blank"
-                class="px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#00AA13]"
+                class="w-fit px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#00AA13]"
               >
                 <img src="res/icon/gofood-logo 1.svg" alt="go food" />
                 <span>Pesan Lewat GoFood</span>
@@ -844,7 +844,7 @@
               <a
                 href="https://wa.me/6281285295547"
                 target="_blank"
-                class="px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#4CAF50]"
+                class="w-fit px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#4CAF50]"
               >
                 <img src="res/icon/whatsapp 1.svg" alt="whatsapp" />
                 <span>Kontak Whatsapp Kami</span>
