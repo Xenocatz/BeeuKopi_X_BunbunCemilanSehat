@@ -178,11 +178,11 @@
           <!-- Menu -->
           <section
             id="menu-section"
-            class="font-medium gap-16 md:gap-28 lg:gap-48 py-44 relative -z-10 flex h-fit w-full flex-col bg-[linear-gradient(to_bottom,transparent,var(--color-bgprimary)_10%,var(--color-bgprimary)_90%,var(--color-bgsecondary)_100%)] text-[#42291A]"
+            class=" font-medium gap-16 md:gap-28 lg:gap-48 py-44 relative z-10 flex h-fit w-full flex-col bg-[linear-gradient(to_bottom,transparent,var(--color-bgprimary)_10%,var(--color-bgprimary)_90%,var(--color-bgsecondary)_100%)] text-[#42291A]"
           >
             <div class="lg:flex lg:gap-12 xl:gap-32 w-full justify-start">
               <img
-                class="w-36 md:w-72 lg:w-96 xl:w-120 -translate-x-4 md:-translate-x-8 xl:-translate-x-12 inline-block aspect-square rounded-full rounded-bl-none border-4 border-[#9A5628] object-cover object-bottom"
+                class="inline-block w-36 h-36 md:w-72 md:h-72 lg:w-96 lg:h-96 xl:w-120 xl:h-120 -translate-x-4 md:-translate-x-8 xl:-translate-x-12 aspect-square rounded-full rounded-bl-none border-4 border-[#9A5628] object-cover object-bottom"
                 src="res/images/menu-kiri.webp"
                 alt="Beuu Kopi Menu"
               />
@@ -192,64 +192,204 @@
                 Beeu Kopi
               </h2>
 
-              <div>
+              <div class="relative">
                 <h2 class="lg:block lg:text-5xl xl:text-6xl font-bold hidden">
                   Beeu Kopi
                 </h2>
                 <ul
                   class="border-black divide-black mt-16 lg:mt-8 mx-auto flex w-fit divide-x-2 border-2"
                 >
-                  <li
-                    class="w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl bg-secondary font-bold text-white flex cursor-pointer items-center justify-center"
-                  >
-                    Black Coffee
+                  <li>
+                    <button
+                      class="beeu-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl bg-secondary font-bold text-white flex cursor-pointer items-center justify-center"
+                    >
+                      Black Coffee
+                    </button>
                   </li>
-                  <li
-                    class="w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
-                  >
-                    White Coffee
+                  <li>
+                    <button 
+                      class="beeu-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
+                    >
+                      White Coffee
+                    </button>
                   </li>
-                  <li
-                    class="w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
-                  >
-                    Non Coffee
+                  <li>
+                    <button
+                      class="beeu-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
+                      >
+                      Non Coffee
+                    </button>
                   </li>
                 </ul>
+                
+                <div class="flex w-full justify-center">
+                
+                  <ul
+                    class="absolute opacity-100 beeu-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
+                  >
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Hot/Iced Black Coffee
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Expresso Single Shot
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Shakerato
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Tubruk Robusta/Arabika
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Hot/Iced Pour Over
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Cold Brew
+                    </li>
+                  </ul>
 
-                <ul
-                  class="gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
-                >
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
+                  <ul
+                    class="absolute opacity-0 beeu-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
                   >
-                    Hot/Iced Black Coffee
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Cafe latte / Cappucino House Blend
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Cafe latte / Cappucino Arabika
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Affogatto Vanilla / Avocado / Kopyor
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Vietnamese Drip
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Espresso Delight
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Kopi Susu Gula Aren
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Es Kopi Vanilla Cinnamon
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Kopi Kopyor
+                    </li>
+                  </ul>
+
+                  <ul
+                    class="relative opacity-0 beeu-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-overflow-row grid-cols-2 max-h-72 overflow-y-scroll"
                   >
-                    Expresso Single Shot
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
-                  >
-                    Shakerato
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
-                  >
-                    Tubruk Robusta/Arabika
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
-                  >
-                    Hot/Iced Pour Over
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
-                  >
-                    Cold Brew
-                  </li>
-                </ul>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Botanikal with Lemon
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Milk Tea
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Lemon Tea
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Lipton Tea
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Lemonade
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Cascara Lemonade
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Apple Lemonade
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Orange Carrot
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Apple Carrot
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Orange Apple Carrot
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Hot / Iced Lemongrass Ginger
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Matcha Latte
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Hot / Iced Chocolate
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Milk Shake Vanilla / Chocolate
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Milk Shake Avocado / Kopyor
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Mineral Water
+                    </li>
+                  </ul>
+                </div>
+
               </div>
             </div>
 
@@ -261,7 +401,7 @@
                   Bunbun Cemilan Sehat
                 </h2>
                 <img
-                  class="w-36 md:w-72 lg:w-96 xl:w-120 translate-x-4 md:translate-x-8 xl:translate-x-12 aspect-square rounded-full rounded-br-none border-4 border-[#9A5628] object-cover object-bottom"
+                  class="w-36 h-36 md:w-72 md:h-72 lg:w-96 lg:h-96 xl:w-120 xl:h-120 translate-x-4 md:translate-x-8 xl:translate-x-12 aspect-square rounded-full rounded-br-none border-4 border-[#9A5628] object-cover object-bottom"
                   src="res/images/menu-kanan.webp"
                   alt="Bunbun Menu"
                 />
@@ -276,57 +416,135 @@
                 <ul
                   class="border-black divide-black mt-16 lg:mt-8 mx-auto flex w-fit divide-x-2 border-2"
                 >
-                  <li
-                    class="w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl bg-secondary font-bold text-white flex cursor-pointer items-center justify-center"
-                  >
-                    Jajanan Pasar
+                  <li>
+                    <button
+                      class="bunbun-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl bg-secondary font-bold text-white flex cursor-pointer items-center justify-center"
+                    >
+                      Jajanan Pasar
+                    </button>
                   </li>
-                  <li
-                    class="w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
-                  >
-                    Frozen Food
+                  <li>
+                    <button 
+                      class="bunbun-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
+                    >
+                      Frozen Food
+                    </button>
                   </li>
-                  <li
-                    class="w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
-                  >
-                    Catering
+                  <li>
+                    <button
+                      class="bunbun-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
+                      >
+                      Catering
+                    </button>
                   </li>
                 </ul>
+                
+                <div class="flex w-full justify-center">
+                  <ul
+                    class="bunbun-menu relative opacity-100 gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
+                  >
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Klepon
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Onde-mande
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Kue Lapis
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Kue Pisang
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Tempe Mendoan
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Lumpia
+                    </li>
+                  </ul>
 
-                <ul
-                  class="gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
-                >
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
+                  <ul
+                    class="bunbun-menu absolute opacity-0 gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
                   >
-                    Klepon
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Klepon
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Onde-mande
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Kue Lapis
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Kue Pisang
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Tempe Mendoan
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Lumpia
+                    </li>
+                  </ul>
+
+                  <ul
+                    class="bunbun-menu absolute opacity-0 gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
                   >
-                    Onde-mande
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
-                  >
-                    Kue Lapis
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
-                  >
-                    Kue Pisang
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
-                  >
-                    Tempe Mendoan
-                  </li>
-                  <li
-                    class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 h-fit border-b-2"
-                  >
-                    Lumpia
-                  </li>
-                </ul>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Klepon
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Onde-mande
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Kue Lapis
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Kue Pisang
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Tempe Mendoan
+                    </li>
+                    <li
+                      class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
+                    >
+                      Lumpia
+                    </li>
+                  </ul>
+                </div>
               </div>
               <img
                 class="lg:block w-72 lg:w-96 xl:w-120 translate-x-4 md:translate-x-8 xl:translate-x-12 hidden aspect-square rounded-full rounded-br-none border-4 border-[#9A5628] object-cover object-bottom"

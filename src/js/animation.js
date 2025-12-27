@@ -52,4 +52,78 @@ document.addEventListener("DOMContentLoaded", (event) => {
       anticipatePin: 1,
     },
   });
+
+  //animation for menu-section
+  const beeuMenuButtons = Array.from(document.querySelectorAll(".beeu-menu-btn"));
+  const bunbunMenuButtons = Array.from(document.querySelectorAll(".bunbun-menu-btn"));
+  const beeuMenuList = Array.from(document.querySelectorAll(".beeu-menu"));
+  const bunbunMenuList = Array.from(document.querySelectorAll(".bunbun-menu"));
+  let beeuActiveMenu = 0;
+  let bunbunActiveMenu = 0;
+
+  beeuMenuButtons.forEach((button, index) => 
+  {
+    button.addEventListener("click", function ()
+    {
+      if (index === beeuActiveMenu) return;
+      beeuMenuButtons.forEach(button => button.classList.remove("bg-secondary", "font-bold", "text-white"));
+      this.classList.add("bg-secondary", "font-bold", "text-white");
+
+      let previousMenu = beeuMenuList[beeuActiveMenu];
+      let activeMenu = beeuMenuList[index];
+      beeuActiveMenu = index;
+
+      gsap.fromTo(previousMenu, {
+        opacity: 1,
+        y: 0,
+        x: 0
+      },{
+        opacity: 0,
+        duration: 0.3,
+        y: 50,
+      });
+
+      gsap.fromTo(activeMenu, {
+        y:0,
+        x: 100,
+        opacity: 0,
+      },{
+        x:0,
+        opacity:1
+      });
+    });
+  });
+
+  bunbunMenuButtons.forEach((button, index) => 
+  {
+    button.addEventListener("click", function ()
+    {
+      if (index === bunbunActiveMenu) return;
+      bunbunMenuButtons.forEach(button => button.classList.remove("bg-secondary", "font-bold", "text-white"));
+      this.classList.add("bg-secondary", "font-bold", "text-white");
+
+      let previousMenu = bunbunMenuList[bunbunActiveMenu];
+      let activeMenu = bunbunMenuList[index];
+      bunbunActiveMenu = index;
+
+      gsap.fromTo(previousMenu, {
+        opacity: 1,
+        y: 0,
+        x: 0
+      },{
+        opacity: 0,
+        duration: 0.3,
+        y: 50,
+      });
+
+      gsap.fromTo(activeMenu, {
+        y:0,
+        x: 100,
+        opacity: 0,
+      },{
+        x:0,
+        opacity:1
+      });
+    });
+  });
 });
