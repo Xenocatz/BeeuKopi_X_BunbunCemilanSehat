@@ -64,13 +64,6 @@ window.addEventListener("load", (event) => {
     delay: 0.5,
   });
 
-  // background
-  // gsap.from("#background-hero", {
-  //   scale: 1.5,
-  //   duration: 1.2,
-  //   ease: "power4.inOut()",
-  // });
-
   // logo
   const tl = gsap.timeline();
   tl.from(
@@ -123,5 +116,25 @@ window.addEventListener("load", (event) => {
     duration: 0.8,
     ease: "back.out(1.7)",
     delay: 2.9,
+  });
+
+  //========================  about section
+  SplitText.create("#about-content p", {
+    type: "words",
+    autoSplit: true,
+    reduceWhiteSpace: true,
+    smartWrap: true,
+    onSplit: (self) => {
+      return gsap.from(self.words, {
+        autoAlpha: 0.5,
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: "#about-title",
+          start: "bottom center",
+          end: "500px center",
+          scrub: 1,
+        },
+      });
+    },
   });
 });
