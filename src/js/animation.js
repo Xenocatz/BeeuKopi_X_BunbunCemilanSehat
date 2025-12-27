@@ -1,12 +1,24 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
-  ScrollSmoother.create({
+  // smooth scroll
+  const scrollSmooth = ScrollSmoother.create({
     smooth: 1,
     effects: true,
     smoothTouch: 0.1,
   });
 
+  // scroll to buat navigasi
+  const navigasi = document.querySelectorAll(".scroll-to");
+  navigasi.forEach((navigasi) => {
+    navigasi.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = navigasi.getAttribute("href");
+      scrollSmooth.scrollTo(target, { smooth: 1 }, "center center");
+    });
+  });
+
+  // scroll trigger buat community
   const section = document.querySelector("#community-section");
   const scrollContent = document.querySelector("#community-content");
 

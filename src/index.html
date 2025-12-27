@@ -22,35 +22,35 @@
               <li>
                 <a
                   href="#"
-                  class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+                  class="scroll-to hover:bg-bgprimary px-3 py-2 text-shadow-lg rounded-full transition-all duration-200"
                   >Home</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+                  href="#about-section"
+                  class="scroll-to hover:bg-bgprimary px-3 py-2 text-shadow-lg rounded-full transition-all duration-200"
                   >About</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+                  href="#menu-section"
+                  class="scroll-to hover:bg-bgprimary px-3 py-2 text-shadow-lg rounded-full transition-all duration-200"
                   >Menu</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+                  href="#community-section"
+                  class="scroll-to hover:bg-bgprimary px-3 py-2 text-shadow-lg rounded-full transition-all duration-200"
                   >Community</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="hover:bg-bgprimary px-3 py-1 text-shadow-lg rounded-full transition-all duration-200"
+                  href="#locations-section"
+                  class="scroll-to hover:bg-bgprimary px-3 py-2 text-shadow-lg rounded-full transition-all duration-200"
                   >Locations & Contact</a
                 >
               </li>
@@ -98,9 +98,16 @@
                 <button
                   class="mt-15 bg-bgprimary hover:bg-bgprimary/70 rounded-lg w-fit transition-all duration-200"
                 >
-                  <a href="#" class="gap-5 p-3 text-shadow-lg flex">
+                  <a
+                    href="#menu-section"
+                    class="scroll-to gap-5 p-3 text-shadow-lg flex items-center"
+                  >
                     <span> Lihat Menu Kami </span>
-                    <img src="res/icon/Arrow 1.svg" alt="panah ke kanan" />
+                    <img
+                      src="res/icon/Arrow 1.svg"
+                      alt="panah ke kanan"
+                      class="w-8 h-8"
+                    />
                   </a>
                 </button>
               </div>
@@ -109,6 +116,7 @@
 
           <!-- about -->
           <section
+            id="about-section"
             class="py-50 relative z-0 flex justify-center overflow-hidden text-[#42291A]"
           >
             <!-- background makanan -->
@@ -161,6 +169,7 @@
 
           <!-- Menu -->
           <section
+            id="menu-section"
             class="font-medium gap-16 md:gap-28 lg:gap-48 py-44 relative -z-10 flex h-fit w-full flex-col bg-[linear-gradient(to_bottom,transparent,var(--color-bgprimary)_10%,var(--color-bgprimary)_90%,var(--color-bgsecondary)_100%)] text-[#42291A]"
           >
             <div class="lg:flex lg:gap-12 xl:gap-32 w-full justify-start">
@@ -695,15 +704,17 @@
           </section>
         </main>
 
+        <!-- location -->
         <footer
+          id="locations-section"
           class="from-bgsecondary to-bgtertiary bg-radial-[at_50%_75%] from-80% to-90%"
         >
           <!-- icon -->
           <div
             class="to-bgtertiary h-70 px-10 relative flex w-full justify-between bg-linear-0 from-transparent to-80%"
           >
-            <a 
-              href="https://www.facebook.com/bunbuncemilansehat/" 
+            <a
+              href="https://www.facebook.com/bunbuncemilansehat/"
               target="_blank"
             >
               <img
@@ -712,9 +723,9 @@
                 class="w-13 h-13 top-30 relative"
               />
             </a>
-            
-            <a 
-              href="https://www.instagram.com/bunbuncemilansehat/" 
+
+            <a
+              href="https://www.instagram.com/bunbuncemilansehat/"
               target="_blank"
             >
               <img
@@ -723,20 +734,17 @@
                 class="w-13 h-13 top-10 relative"
               />
             </a>
-            
-            <a 
-              href="https://wa.me/6281285295547" 
-              target="_blank"
-            >
-              <img 
-                src="res/icon/whatsapp.svg" 
-                alt="whatsapp" 
-                class="w-13 h-13" 
+
+            <a href="https://wa.me/6281285295547" target="_blank">
+              <img
+                src="res/icon/whatsapp.svg"
+                alt="whatsapp"
+                class="w-13 h-13"
               />
             </a>
 
-            <a 
-              href="https://www.threads.com/@bunbuncemilansehat" 
+            <a
+              href="https://www.threads.com/@bunbuncemilansehat"
               target="_blank"
             >
               <img
@@ -746,8 +754,8 @@
               />
             </a>
 
-            <a 
-              href="https://www.youtube.com/@bunbuncemilansehat" 
+            <a
+              href="https://www.youtube.com/@bunbuncemilansehat"
               target="_blank"
             >
               <img
@@ -826,7 +834,7 @@
                 <img src="res/icon/Arrow 1.svg" alt="arrow" class="w-6 h-6" />
               </a>
               <a
-                href="https://wa.me/6281285295547" 
+                href="https://wa.me/6281285295547"
                 target="_blank"
                 class="px-4 py-2 gap-2 rounded-lg flex cursor-pointer items-center bg-[#4CAF50]"
               >
