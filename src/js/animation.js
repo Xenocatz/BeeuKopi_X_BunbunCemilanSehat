@@ -8,13 +8,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
     smoothTouch: 0.1,
   });
 
+  // trigger blur nav bar
+  const navBar = document.querySelector("#nav-bar");
+
+  ScrollTrigger.create({
+    start: "top -50",
+    onEnter: () => navBar.classList.add("header-scrolled"),
+    onLeaveBack: () => navBar.classList.remove("header-scrolled"),
+  });
+
   // scroll to buat navigasi
   const navigasi = document.querySelectorAll(".scroll-to");
   navigasi.forEach((navigasi) => {
     navigasi.addEventListener("click", (e) => {
       e.preventDefault();
+
       const target = navigasi.getAttribute("href");
-      scrollSmooth.scrollTo(target, { smooth: 1 }, "center center");
+      const targetValue = target === "#" ? 0 : target;
+
+      scrollSmooth.scrollTo(targetValue, { smooth: 1 }, "top top");
     });
   });
 
