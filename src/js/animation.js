@@ -36,7 +36,7 @@ window.addEventListener("load", (event) => {
 
   const getScrollAmount = () => {
     let contentWidth = scrollContent.scrollWidth;
-    return -(contentWidth - 1500);
+    return -(contentWidth - window.innerWidth);
   };
 
   gsap.to(scrollContent, {
@@ -137,78 +137,141 @@ window.addEventListener("load", (event) => {
       });
     },
   });
-  
+
   //animation for menu-section
-  const beeuMenuButtons = Array.from(document.querySelectorAll(".beeu-menu-btn"));
-  const bunbunMenuButtons = Array.from(document.querySelectorAll(".bunbun-menu-btn"));
+  const beeuMenuButtons = Array.from(
+    document.querySelectorAll(".beeu-menu-btn"),
+  );
+  const bunbunMenuButtons = Array.from(
+    document.querySelectorAll(".bunbun-menu-btn"),
+  );
   const beeuMenuList = Array.from(document.querySelectorAll(".beeu-menu"));
   const bunbunMenuList = Array.from(document.querySelectorAll(".bunbun-menu"));
   let beeuActiveMenu = 0;
   let bunbunActiveMenu = 0;
 
-  beeuMenuButtons.forEach((button, index) => 
-  {
-    button.addEventListener("click", function ()
-    {
+  beeuMenuButtons.forEach((button, index) => {
+    button.addEventListener("click", function () {
       if (index === beeuActiveMenu) return;
-      beeuMenuButtons.forEach(button => button.classList.remove("bg-secondary", "font-bold", "text-white"));
+      beeuMenuButtons.forEach((button) =>
+        button.classList.remove("bg-secondary", "font-bold", "text-white"),
+      );
       this.classList.add("bg-secondary", "font-bold", "text-white");
 
       let previousMenu = beeuMenuList[beeuActiveMenu];
       let activeMenu = beeuMenuList[index];
       beeuActiveMenu = index;
 
-      gsap.fromTo(previousMenu, {
-        opacity: 1,
-        y: 0,
-        x: 0
-      },{
-        opacity: 0,
-        duration: 0.3,
-        y: 50,
-      });
+      gsap.fromTo(
+        previousMenu,
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+        },
+        {
+          opacity: 0,
+          duration: 0.3,
+          y: 50,
+        },
+      );
 
-      gsap.fromTo(activeMenu, {
-        y:0,
-        x: 100,
-        opacity: 0,
-      },{
-        x:0,
-        opacity:1
-      });
+      gsap.fromTo(
+        activeMenu,
+        {
+          y: 0,
+          x: 100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+        },
+      );
     });
   });
 
-  bunbunMenuButtons.forEach((button, index) => 
-  {
-    button.addEventListener("click", function ()
-    {
+  bunbunMenuButtons.forEach((button, index) => {
+    button.addEventListener("click", function () {
       if (index === bunbunActiveMenu) return;
-      bunbunMenuButtons.forEach(button => button.classList.remove("bg-secondary", "font-bold", "text-white"));
+      bunbunMenuButtons.forEach((button) =>
+        button.classList.remove("bg-secondary", "font-bold", "text-white"),
+      );
       this.classList.add("bg-secondary", "font-bold", "text-white");
 
       let previousMenu = bunbunMenuList[bunbunActiveMenu];
       let activeMenu = bunbunMenuList[index];
       bunbunActiveMenu = index;
 
-      gsap.fromTo(previousMenu, {
-        opacity: 1,
-        y: 0,
-        x: 0
-      },{
-        opacity: 0,
-        duration: 0.3,
-        y: 50,
-      });
+      gsap.fromTo(
+        previousMenu,
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+        },
+        {
+          opacity: 0,
+          duration: 0.3,
+          y: 50,
+        },
+      );
 
-      gsap.fromTo(activeMenu, {
-        y:0,
-        x: 100,
-        opacity: 0,
-      },{
-        x:0,
-        opacity:1
-      });
+      gsap.fromTo(
+        activeMenu,
+        {
+          y: 0,
+          x: 100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+        },
+      );
+    });
+  });
+
+  // hamburger menu
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const lines = document.querySelectorAll(".hamburger-line");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  const menuTl = gsap.timeline({ paused: true, reversed: true });
+
+  menuTl
+    .to(mobileMenu, {
+      x: 0,
+      duration: 0.6,
+      ease: "power4.inOut",
+    })
+    .to(lines[0], { y: 8, rotate: 45, duration: 0.3 }, "<")
+    .to(lines[1], { opacity: 0, duration: 0.2 }, "<")
+    .to(lines[2], { y: -8, rotate: -45, duration: 0.3 }, "<")
+    .to(
+      mobileLinks,
+      {
+        opacity: 1,
+        y: -20,
+        stagger: 0.1,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      },
+      "-=0.2",
+    );
+
+  menuBtn.addEventListener("click", () => {
+    if (menuTl.reversed()) {
+      menuTl.play();
+    } else {
+      menuTl.reverse();
+    }
+  });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuTl.reverse();
     });
   });
 });

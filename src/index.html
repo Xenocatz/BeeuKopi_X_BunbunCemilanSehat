@@ -13,8 +13,8 @@
     />
   </head>
   <body class="bg-bgsecondary overflow-x-clip">
-    <!-- navigasi bar atas -->
-    <header class="top-0 left-0 right-0 fixed z-50 w-full">
+    <!-- navigasi bar atas (desktop)-->
+    <header class="md:block top-0 left-0 right-0 fixed z-50 hidden w-full">
       <nav
         class="py-2 flex items-center justify-center transition-all duration-300"
       >
@@ -39,7 +39,7 @@
           <li>
             <a
               href="#menu-section"
-              class="scroll-to hover:bg-bgprimar md:scale-0y text-xs px-3 py-2 text-shadow-lg scale-95 rounded-full transition-all duration-200"
+              class="scroll-to hover:bg-bgprimary md:scale-0y text-xs px-3 py-2 text-shadow-lg scale-95 rounded-full transition-all duration-200"
               >Menu</a
             >
           </li>
@@ -53,13 +53,96 @@
           <li>
             <a
               href="#locations-section"
-              class="scroll-to hover:bg-bgprimar md:scale-0y text-xs px-3 py-2 text-shadow-lg scale-95 rounded-full transition-all duration-200"
+              class="scroll-to hover:bg-bgprimary md:scale-0y text-xs px-3 py-2 text-shadow-lg scale-95 rounded-full transition-all duration-200"
               >Locations & Contact</a
             >
           </li>
         </ul>
       </nav>
     </header>
+
+    <!-- nav bar atas (mobile) -->
+    <header class="top-0 left-0 right-0 fixed z-50 w-full">
+      <nav
+        class="py-4 px-6 md:justify-center flex items-center justify-between transition-all duration-300"
+      >
+        <ul
+          id="nav-bar-desktop"
+          class="md:flex py-3 px-3 gap-10 bg-white/10 backdrop-blur-md hidden items-center justify-center rounded-full"
+        >
+          <li>
+            <a href="#" class="hover:text-orange-500 transition-colors">Home</a>
+          </li>
+          <li>
+            <a
+              href="#about-section"
+              class="hover:text-orange-500 transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#menu-section"
+              class="hover:text-orange-500 transition-colors"
+              >Menu</a
+            >
+          </li>
+          <li>
+            <a
+              href="#community-section"
+              class="hover:text-orange-500 transition-colors"
+              >Community</a
+            >
+          </li>
+          <li>
+            <a
+              href="#locations-section"
+              class="hover:text-orange-500 transition-colors"
+              >Locations</a
+            >
+          </li>
+        </ul>
+
+        <button
+          id="menu-btn"
+          class="md:hidden bg-secondary/60 p-2 relative z-60 block rounded-full focus:outline-none"
+        >
+          <div class="hamburger-line w-6 h-0.5 bg-bgprimary mb-1.5"></div>
+          <div class="hamburger-line w-6 h-0.5 bg-bgprimary mb-1.5"></div>
+          <div class="hamburger-line w-6 h-0.5 bg-bgprimary"></div>
+        </button>
+
+        <div
+          id="mobile-menu"
+          class="inset-0 bg-bgtertiary md:hidden gap-6 fixed z-50 flex -translate-x-full flex-col items-center justify-center"
+        >
+          <a href="#" class="scroll-to mobile-link text-3xl font-bold opacity-0"
+            >Home</a
+          >
+          <a
+            href="#about-section"
+            class="scroll-to mobile-link text-3xl font-bold opacity-0"
+            >About</a
+          >
+          <a
+            href="#menu-section"
+            class="scroll-to mobile-link text-3xl font-bold opacity-0"
+            >Menu</a
+          >
+          <a
+            href="#community-section"
+            class="scroll-to mobile-link text-3xl font-bold opacity-0"
+            >Community</a
+          >
+          <a
+            href="#locations-section"
+            class="scroll-to mobile-link text-3xl font-bold opacity-0"
+            >Locations</a
+          >
+        </div>
+      </nav>
+    </header>
+
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <main>
@@ -194,11 +277,11 @@
           <!-- Menu -->
           <section
             id="menu-section"
-            class=" font-medium gap-16 md:gap-28 lg:gap-48 py-44 relative z-10 flex h-fit w-full flex-col bg-[linear-gradient(to_bottom,transparent,var(--color-bgprimary)_10%,var(--color-bgprimary)_90%,var(--color-bgsecondary)_100%)] text-[#42291A]"
+            class="font-medium gap-16 md:gap-28 lg:gap-48 py-44 relative z-10 flex h-fit w-full flex-col bg-[linear-gradient(to_bottom,transparent,var(--color-bgprimary)_10%,var(--color-bgprimary)_90%,var(--color-bgsecondary)_100%)] text-[#42291A]"
           >
             <div class="lg:flex lg:gap-12 xl:gap-32 w-full justify-start">
               <img
-                class="inline-block w-36 h-36 md:w-72 md:h-72 lg:w-96 lg:h-96 xl:w-120 xl:h-120 -translate-x-4 md:-translate-x-8 xl:-translate-x-12 aspect-square rounded-full rounded-bl-none border-4 border-[#9A5628] object-cover object-bottom"
+                class="w-36 h-36 md:w-72 md:h-72 lg:w-96 lg:h-96 xl:w-120 xl:h-120 -translate-x-4 md:-translate-x-8 xl:-translate-x-12 inline-block aspect-square rounded-full rounded-bl-none border-4 border-[#9A5628] object-cover object-bottom"
                 src="res/images/menu-kiri.webp"
                 alt="Beuu Kopi Menu"
               />
@@ -217,31 +300,30 @@
                 >
                   <li>
                     <button
-                      class="beeu-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl bg-secondary font-bold text-white flex cursor-pointer items-center justify-center"
+                      class="beeu-menu-btn w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl bg-secondary font-bold text-white flex cursor-pointer items-center justify-center transition-all duration-400"
                     >
                       Black Coffee
                     </button>
                   </li>
                   <li>
-                    <button 
-                      class="beeu-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
+                    <button
+                      class="beeu-menu-btn w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center transition-all duration-400"
                     >
                       White Coffee
                     </button>
                   </li>
                   <li>
                     <button
-                      class="beeu-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
-                      >
+                      class="beeu-menu-btn w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center transition-all duration-400"
+                    >
                       Non Coffee
                     </button>
                   </li>
                 </ul>
-                
+
                 <div class="flex w-full justify-center">
-                
                   <ul
-                    class="absolute opacity-100 beeu-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
+                    class="beeu-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 absolute mx-auto grid w-fit grid-flow-col grid-rows-4 opacity-100"
                   >
                     <li
                       class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
@@ -276,7 +358,7 @@
                   </ul>
 
                   <ul
-                    class="absolute opacity-0 beeu-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
+                    class="beeu-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 absolute mx-auto grid w-fit grid-flow-col grid-rows-4 opacity-0"
                   >
                     <li
                       class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
@@ -321,7 +403,7 @@
                   </ul>
 
                   <ul
-                    class="relative opacity-0 beeu-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-overflow-row grid-cols-2 max-h-72 overflow-y-scroll"
+                    class="beeu-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 grid-overflow-row max-h-72 relative mx-auto grid w-fit grid-cols-2 overflow-y-scroll opacity-0"
                   >
                     <li
                       class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
@@ -405,7 +487,6 @@
                     </li>
                   </ul>
                 </div>
-
               </div>
             </div>
 
@@ -434,30 +515,30 @@
                 >
                   <li>
                     <button
-                      class="bunbun-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl bg-secondary font-bold text-white flex cursor-pointer items-center justify-center"
+                      class="bunbun-menu-btn w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl bg-secondary font-bold text-white flex cursor-pointer items-center justify-center transition-all duration-400"
                     >
                       Jajanan Pasar
                     </button>
                   </li>
                   <li>
-                    <button 
-                      class="bunbun-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
+                    <button
+                      class="bunbun-menu-btn w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center transition-all duration-400"
                     >
                       Frozen Food
                     </button>
                   </li>
                   <li>
                     <button
-                      class="bunbun-menu-btn transition-all duration-400 w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center"
-                      >
+                      class="bunbun-menu-btn w-24 xs:w-34 h-8 md:w-44 md:h-12 xl:w-52 xl:h-14 text-xs xs:text-base lg:text-xl xl:text-2xl flex cursor-pointer items-center justify-center transition-all duration-400"
+                    >
                       Catering
                     </button>
                   </li>
                 </ul>
-                
+
                 <div class="flex w-full justify-center">
                   <ul
-                    class="bunbun-menu relative opacity-100 gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
+                    class="bunbun-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 relative mx-auto grid w-fit grid-flow-col grid-rows-4 opacity-100"
                   >
                     <li
                       class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
@@ -492,7 +573,7 @@
                   </ul>
 
                   <ul
-                    class="bunbun-menu absolute opacity-0 gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
+                    class="bunbun-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 absolute mx-auto grid w-fit grid-flow-col grid-rows-4 opacity-0"
                   >
                     <li
                       class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
@@ -527,7 +608,7 @@
                   </ul>
 
                   <ul
-                    class="bunbun-menu absolute opacity-0 gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 mx-auto grid w-fit grid-flow-col grid-rows-4"
+                    class="bunbun-menu gap-x-4 xs:gap-x-12 gap-y-4 md:gap-y-2 xl:gap-y-8 text-xl mt-8 absolute mx-auto grid w-fit grid-flow-col grid-rows-4 opacity-0"
                   >
                     <li
                       class="p-2 text-xs md:text-base xl:text-xl w-32 xs:w-40 md:w-56 xl:w-68 flex items-end border-b-2"
@@ -575,7 +656,9 @@
             id="community-section"
             class="mb-50 py-16 flex h-screen flex-col"
           >
-            <h1 class="text-5xl text-black font-bold mb-12 text-center">
+            <h1
+              class="text-3xl md:text-5xl text-black font-bold mb-12 text-center"
+            >
               Our Community
             </h1>
 
@@ -585,7 +668,9 @@
                   id="community-content"
                   class="px-50 pb-4 gap-10 h-160 flex"
                 >
-                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                  <div
+                    class="gap-4 w-32 md:w-64 flex shrink-0 flex-col justify-center"
+                  >
                     <div
                       class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
                     >
@@ -606,7 +691,9 @@
                     </div>
                   </div>
 
-                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                  <div
+                    class="gap-4 w-32 md:w-64 flex shrink-0 flex-col justify-center"
+                  >
                     <div
                       class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
                     >
@@ -627,7 +714,9 @@
                     </div>
                   </div>
 
-                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                  <div
+                    class="gap-4 w-32 md:w-64 flex shrink-0 flex-col justify-center"
+                  >
                     <div
                       class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
                     >
@@ -648,7 +737,9 @@
                     </div>
                   </div>
 
-                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                  <div
+                    class="gap-4 w-32 md:w-64 flex shrink-0 flex-col justify-center"
+                  >
                     <div
                       class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
                     >
@@ -669,7 +760,9 @@
                     </div>
                   </div>
 
-                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                  <div
+                    class="gap-4 w-32 md:w-64 flex shrink-0 flex-col justify-center"
+                  >
                     <div
                       class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
                     >
@@ -690,7 +783,9 @@
                     </div>
                   </div>
 
-                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                  <div
+                    class="gap-4 w-32 md:w-64 flex shrink-0 flex-col justify-center"
+                  >
                     <div
                       class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
                     >
@@ -711,7 +806,9 @@
                     </div>
                   </div>
 
-                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                  <div
+                    class="gap-4 w-32 md:w-64 flex shrink-0 flex-col justify-center"
+                  >
                     <div
                       class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
                     >
@@ -731,7 +828,9 @@
                       />
                     </div>
                   </div>
-                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                  <div
+                    class="gap-4 w-32 md:w-64 flex shrink-0 flex-col justify-center"
+                  >
                     <div
                       class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
                     >
@@ -751,7 +850,9 @@
                       />
                     </div>
                   </div>
-                  <div class="gap-4 w-64 flex shrink-0 flex-col justify-center">
+                  <div
+                    class="gap-4 w-32 md:w-64 flex shrink-0 flex-col justify-center"
+                  >
                     <div
                       class="rounded-lg shadow-lg hover:shadow-2xl bg-white relative overflow-hidden transition-all duration-300 hover:scale-95"
                     >
@@ -780,14 +881,16 @@
           <section
             class="pt-30 pb-70 from-bgtertiary to-bgsecondary bg-linear-0 from-90%"
           >
-            <h1 class="text-5xl text-black font-bold mb-20 text-center">
+            <h1
+              class="text-3xl md:text-5xl text-black font-bold mb-20 text-center"
+            >
               Testimonial
             </h1>
             <!-- content -->
             <div class="gap-10 flex flex-wrap justify-center">
               <!-- testimoni card -->
               <div
-                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+                class="gap-3 max-w-64 md:max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
               >
                 <span
                   class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
@@ -797,7 +900,7 @@
                   class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
                   >"</span
                 >
-                <div class="gap-5 max-w-80 flex flex-col">
+                <div class="gap-3 md:gap-5 max-w-80 flex flex-col">
                   <p class="text-xs text-shadow-2xs line-clamp-6">
                     Dimsum nya enak bangeeeetttttt, dimsum mentai nya juwara,
                     tempat nya cozy, bersih daaannn minuman favorit saya disitu
@@ -809,7 +912,7 @@
                   <img
                     src="res/images/blank-image.png"
                     alt="Testimoni"
-                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                    class="min-w-12 min-h-12 w-12 h-12 md:min-w-15 md:min-h-15 md:w-15 md:h-15 shadow-2xl rounded-full object-cover object-center"
                   />
                   <span
                     class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
@@ -818,7 +921,7 @@
                 </div>
               </div>
               <div
-                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+                class="gap-3 max-w-64 md:max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
               >
                 <span
                   class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
@@ -828,7 +931,7 @@
                   class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
                   >"</span
                 >
-                <div class="gap-5 max-w-80 flex flex-col">
+                <div class="gap-3 md:gap-5 max-w-80 flex flex-col">
                   <p class="text-xs text-shadow-2xs line-clamp-6">
                     Tempatnya enak bgtt, bersih dan adem. Untuk dimsum aku
                     paling suka yg mentai rasanya enak bgtt pokonya beda dari yg
@@ -842,7 +945,7 @@
                   <img
                     src="res/images/blank-image.png"
                     alt="Testimoni"
-                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                    class="min-w-12 min-h-12 w-12 h-12 md:min-w-15 md:min-h-15 md:w-15 md:h-15 shadow-2xl rounded-full object-cover object-center"
                   />
                   <span
                     class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
@@ -851,7 +954,7 @@
                 </div>
               </div>
               <div
-                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+                class="gap-3 max-w-64 md:max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
               >
                 <span
                   class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
@@ -861,7 +964,7 @@
                   class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
                   >"</span
                 >
-                <div class="gap-5 max-w-80 flex flex-col">
+                <div class="gap-3 md:gap-5 max-w-80 flex flex-col">
                   <p class="text-xs text-shadow-2xs line-clamp-6">
                     Tempat yang sangat humble seperti dirumah sendiri, kopinya
                     enakk pelayanan nya top, owner nya baik, harganya
@@ -874,7 +977,7 @@
                   <img
                     src="res/images/blank-image.png"
                     alt="Testimoni"
-                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                    class="min-w-12 min-h-12 w-12 h-12 md:min-w-15 md:min-h-15 md:w-15 md:h-15 shadow-2xl rounded-full object-cover object-center"
                   />
                   <span
                     class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
@@ -883,7 +986,7 @@
                 </div>
               </div>
               <div
-                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+                class="gap-3 max-w-64 md:max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
               >
                 <span
                   class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
@@ -893,7 +996,7 @@
                   class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
                   >"</span
                 >
-                <div class="gap-5 max-w-80 flex flex-col">
+                <div class="gap-3 md:gap-5 max-w-80 flex flex-col">
                   <p class="text-xs text-shadow-2xs line-clamp-6">
                     Kemana aja dirikuu, baru nyoba kopi arabicanya enak,, next
                     insyaa Allah mau coba makanannya sm minuman yg lain.
@@ -904,7 +1007,7 @@
                   <img
                     src="res/images/blank-image.png"
                     alt="Testimoni"
-                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                    class="min-w-12 min-h-12 w-12 h-12 md:min-w-15 md:min-h-15 md:w-15 md:h-15 shadow-2xl rounded-full object-cover object-center"
                   />
                   <span
                     class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
@@ -913,7 +1016,7 @@
                 </div>
               </div>
               <div
-                class="gap-3 max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
+                class="gap-3 max-w-64 md:max-w-100 bg-bgprimary/80 rounded-2xl p-5 shadow-2xl relative flex items-center justify-center"
               >
                 <span
                   class="text-8xl text-secondary -top-4 left-0 font-bold absolute"
@@ -923,7 +1026,7 @@
                   class="text-8xl text-secondary -bottom-4 right-0 font-bold absolute rotate-180"
                   >"</span
                 >
-                <div class="gap-5 max-w-80 flex flex-col">
+                <div class="gap-3 md:gap-5 max-w-80 flex flex-col">
                   <p class="text-xs text-shadow-2xs line-clamp-6">
                     Nybain cofee es cream, afogato. Enak .. Tempat enak nyaman
                     bersih..
@@ -934,7 +1037,7 @@
                   <img
                     src="res/images/blank-image.png"
                     alt="Testimoni"
-                    class="min-w-15 min-h-15 w-15 h-15 shadow-2xl rounded-full object-cover object-center"
+                    class="min-w-12 min-h-12 w-12 h-12 md:min-w-15 md:min-h-15 md:w-15 md:h-15 shadow-2xl rounded-full object-cover object-center"
                   />
                   <span
                     class="font-semibold text-xs text-shadow-2xs line-clamp-2 text-center"
